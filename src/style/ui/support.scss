@@ -1,0 +1,20 @@
+.support{
+    &__heading{
+        color: white;
+        font-size: 18px;
+        padding-bottom: 10px;
+        font-weight: 700;
+    }
+    &__description{
+        color: white;
+        font-size: 16px;
+        width: 255px;
+        padding-bottom: 10px;
+        font-weight: normal;
+        line-height: 25px;
+    }
+}
+.network{
+    display: flex;
+    gap: 20px;
+}

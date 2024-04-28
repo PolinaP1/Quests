@@ -1,0 +1,8 @@
+.network__item img{
+    transition: (0.75s);
+    display: block;
+}
+
+.network__item img:hover {
+    transform: scale(1.3);
+}

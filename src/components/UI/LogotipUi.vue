@@ -8,13 +8,10 @@ export default {
 
 <template>
     <router-link to="/" class="logo">
-        <img src="@/img/Logotip.png"/>
+        <img src="@/img/Logotip.svg"/>
     </router-link>
 </template>
 
 <style>
-.logo{
-    padding-right: 395px;
-    padding-left: 50px;
-}
+
 </style>

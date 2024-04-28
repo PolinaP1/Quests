@@ -1,0 +1,30 @@
+.assistance {
+
+    &__heading {
+        font-size: 18px;
+        padding-bottom: 10px;
+        font-weight: 700;
+    }
+
+    &__description {
+        font-size: 16px;
+        width: 250px;
+        padding-bottom: 10px;
+        font-weight: normal;
+        line-height: 25px;
+    }
+
+    &__number {
+
+        &__link {
+            color: $orange;
+        }
+
+        font-size: 16px;
+        font-weight: 700;
+    }
+}
+
+.assistance__number :hover {
+    color: $black-orange;
+}

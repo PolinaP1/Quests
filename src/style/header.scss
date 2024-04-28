@@ -1,0 +1,41 @@
+.header-ui {
+    position: relative;
+}
+
+.header {
+    margin-top: 35px;
+    height: 45px;
+    padding-right: 50px;
+    padding-left: 50px;
+    gap: 396px;
+    @include flex-b ($ai: center);
+    position: absolute;
+}
+
+.img {
+    width: 100%;
+}
+
+.number {
+    font-weight: 600;
+
+    &__link {
+        color: $orange;
+    }
+}
+
+.header .navbar {
+    display: flex;
+    gap: 40px;
+    width: 250px;
+}
+
+.navbar :hover {
+    font-weight: 700;
+    filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.5));
+    color: $black-orange;
+}
+
+.number :hover {
+    color: $black-orange;
+}

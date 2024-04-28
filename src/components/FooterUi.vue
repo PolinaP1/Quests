@@ -1,7 +1,7 @@
 <script>
 import NavbarUi from './UI/NavbarUi.vue';
-import SupportUi from './UI/SupportUi.vue';
-import AssistanceUi from './UI/AssistanceUi.vue';
+import SupportUi from './UI/FooterElementsOnly/SupportUi.vue';
+import AssistanceUi from './UI/FooterElementsOnly/AssistanceUi.vue';
 
 export default {
     components:{
@@ -15,6 +15,7 @@ export default {
 <template>
     <footer class="footer">
         <div class="footer__link">
+            <h2 class="footer__link__title">Illuminous</h2>
             <navbar-ui/>
         </div>
         <support-ui/>
@@ -23,19 +24,5 @@ export default {
 </template>
 
 <style>
-    .footer{
-        background: #1A1A1A;
-        height: 287px;
-        display: flex;
-        gap: 100px;
-        padding-top: 50px;
-        justify-content: space-between;
-        
-    }
-    .footer .nav__items{
-        color:white;
-    }
-    .footer__link{
-        width: 50px;
-    }
+
 </style>

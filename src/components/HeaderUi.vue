@@ -1,30 +1,31 @@
 <script>
-import MenuUi from './MenuUi.vue';
+import LogotipUi from './UI/LogotipUi.vue';
+import NavbarUi from './UI/NavbarUi.vue';
 export default {
     data() {
         return {
-            
+
         }
     },
-    components:{
-        MenuUi,
+    components: {
+        LogotipUi,
+        NavbarUi
     }
 }
 </script>
 
 <template>
-    <header class="header">
-        <menu-ui/>
-    </header>
+    <div class="header-ui">
+        <header class="header">
+            <logotip-ui />
+            <div class="navbar">
+                <navbar-ui />
+            </div>
+            <div class="number">
+                <a class="number__link" href='/'>+7 (499) 460-54-20</a>
+            </div>
+        </header>
+    </div>
 </template>
 
-<style>
-.header{
-    margin-top: 35px;
-    display: flex;
-    align-items: center;
-    height: 45px;
-    width: 100%;
-    background: rgba(45, 45, 45, 0.196);
-}
-</style>
+<style></style>
