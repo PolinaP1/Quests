@@ -1,9 +1,10 @@
 .header-ui {
     position: relative;
+    @include flex-c ($ai:center);
 }
 
 .header {
-    margin-top: 35px;
+    margin-top: 85px;
     height: 45px;
     padding-right: 50px;
     padding-left: 50px;

@@ -4,7 +4,7 @@ import SupportUi from './UI/FooterElementsOnly/SupportUi.vue';
 import AssistanceUi from './UI/FooterElementsOnly/AssistanceUi.vue';
 
 export default {
-    components:{
+    components: {
         NavbarUi,
         SupportUi,
         AssistanceUi
@@ -14,15 +14,15 @@ export default {
 
 <template>
     <footer class="footer">
-        <div class="footer__link">
-            <h2 class="footer__link__title">Illuminous</h2>
-            <navbar-ui/>
+        <div class="footer__container">
+            <div class="footer__link">
+                <h2 class="footer__link__title">Illuminous</h2>
+                <navbar-ui />
+            </div>
+            <support-ui />
+            <assistance-ui />
         </div>
-        <support-ui/>
-        <assistance-ui/>
     </footer>
 </template>
 
-<style>
-
-</style>
+<style></style>

@@ -1,24 +1,27 @@
 <script>
-import FilteringquestsUi from '@/components/UI/FilteringquestsUi.vue';
+import FilteringquestsUi from '@/components/UI/Filter/FilteringquestsUi.vue';
 import RecomendationsUi from '@/components/UI/RecomendationsUi.vue';
+import ProposalAbout from '@/components/ProposalAbout.vue';
 
 export default {
-    components:{
+    components: {
         RecomendationsUi,
-        FilteringquestsUi
+        FilteringquestsUi,
+        ProposalAbout
     }
 }
 </script>
 
 <template>
     <div class="home">
-        <recomendations-ui/>
-        <filteringquests-ui/>
+        <recomendations-ui />
+        <filteringquests-ui />
+        <proposal-about />
     </div>
 </template>
 
 <style>
-    .home{
-        background: black;
-    }
+.home {
+    background: black;
+}
 </style>

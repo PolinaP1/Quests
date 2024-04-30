@@ -1,0 +1,39 @@
+// .unique {
+//     margin-top: 25px;
+//     width: 50vw;
+//     width: 450px;
+
+//     &__title {
+//         font-weight: 600;
+//         font-size: 35px;
+//         background: $gradient;
+//         background-clip: text;
+//         -webkit-background-clip: text;
+//         -webkit-text-fill-color: transparent;
+//         font-weight: 700;
+//         padding-bottom: 20px;
+//     }
+
+//     &__brevity {
+//         font-size: 25px;
+//         padding-bottom: 20px;
+//         background-clip: text;
+//         -webkit-background-clip: text;
+//         -webkit-text-fill-color: transparent;
+
+//         &__selection {
+//             color: $black-orange;
+//         }
+//     }
+
+//     &__descriptions {
+//         font-size: 25px;
+//         line-height: 30px;
+//         width: 450px;
+//     }
+// }
+
+// .container_unique {
+//     @include flex-c ($ai: center);
+//     gap: 50px;
+// }

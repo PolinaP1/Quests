@@ -1,0 +1,65 @@
+.proposal {
+    background-image: url("@/img/ProposalAboutUs.svg");
+    @include backg-img ($bp: center);
+    padding-top: 70px;
+    display: flex;
+    justify-content: center;
+
+    &__container {
+        width: 50vw;
+        width: 940px;
+        @include grid-b ($ai: start);
+    }
+
+    &__text {
+        @include grid-b ($ai: center);
+        gap: 25px;
+
+        &__postscript {
+            color: $orange;
+            @include flex-c ($ai: center);
+        }
+
+        &__title {
+            font-size: 32px;
+        }
+
+        &__descripion {
+            @include flex-c ($ai: center);
+            font-size: 24px;
+        }
+    }
+
+    &__nav {
+        @include flex-c ($ai: center);
+        width: 835px;
+        gap: 80px;
+
+        &__ul {
+            @include grid-b ($ai: center);
+            gap: 35px;
+        }
+
+        &__li{
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            gap: 30px;
+        }
+    }
+
+    &__watch {
+        @include flex-c ($ai: center);
+
+        &__button {
+            color: white;
+            background: $orange;
+            border-radius: 36px;
+            width: 210px;
+            height: 40px;
+            font-size: 16px;
+            padding: 20px 20px;
+            @include flex-c ($ai: center);
+        }
+    }
+}

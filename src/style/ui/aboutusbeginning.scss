@@ -1,25 +1,28 @@
-.recomendation {
-    background-image: url("@/img/Joker.svg");
+.container {
+    background-image: url("@/img/BeginngingAbout.svg");
     @include backg-img ($bp: center);
-    padding-top: 280px;
-    padding-left: 170px;
-    display: block;
+    padding: 230px 233px 185px 233px;
+    display: block;  
+}
 
-    &__postscript {
-        color: $grey;
-        padding-bottom: 25px;
-    }
+.aboutus__beginning{
+    @include flex-c ($ai:center);
+    gap: 70px;
+}
 
+.beginning {
+    
     &__title {
-        font-size: 40px;
+        font-size: 36px;
         font-weight: bold;
-        padding-bottom: 15px;
+        padding-bottom: 20px;
     }
 
     &__descripion {
         font-size: 18px;
-        width: 450px;
+        width: 525px;
         padding-bottom: 30px;
+        line-height: 35px;
     }
 
     &__detailed {
@@ -31,9 +34,19 @@
         font-size: 16px;
         @include flex-c ($ai: center);
         gap: 10px;
-//что?
+
+        //что?
         :hover {
             background: $black-orange;
         }
     }
+}
+
+.logoBeginning {
+    width: 415px;
+    height: 366px;
+}
+
+.detailed {
+    transform: rotate(90deg);
 }

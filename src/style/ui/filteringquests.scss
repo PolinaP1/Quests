@@ -21,8 +21,6 @@
 }
 
 .filtering__quests {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-c ($ai:center);
     width: 100%;
 }

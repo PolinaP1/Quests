@@ -1,5 +1,5 @@
 <script>
-import SotialnetworkUi from './SotialnetworkUi.vue';
+import SotialnetworkUi from '../SotialnetworkUi.vue';
 
 export default {
     components: {

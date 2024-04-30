@@ -1,0 +1,57 @@
+.about {
+    margin-top: 45px;
+    width: 50vw;
+    width: 500px;
+
+    &__title {
+        font-weight: 600;
+        font-size: 35px;
+        background: $gradient;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 700;
+        padding-bottom: 20px;
+    }
+
+    &__brevity {
+        font-size: 25px;
+        padding-bottom: 20px;
+
+        &__selection {
+            color: $black-orange;
+        }
+    }
+
+    &__descriptions {
+        font-size: 25px;
+        line-height: 30px;
+        width: 480px;
+        text-align: justify;
+        padding-bottom: 25px;
+    }
+}
+
+.container_about {
+    @include flex-c ($ai: center);
+    gap: 50px;
+    margin-top: 100px;
+}
+
+.safey__img {
+    width: 360px;
+    height: 280px;
+}
+
+.about__img {
+    height: 290px;
+}
+
+.sotial__network__size .network__item {
+    height: 55px;
+}
+
+.contacts__img {
+    height: 390px;
+}
+
