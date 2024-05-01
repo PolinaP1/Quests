@@ -1,6 +1,11 @@
 <script>
-export default {
 
+export default {
+    methods: {
+        goToAboutUs(){
+            this.$router.push('/About')
+        }
+    },
 }
 </script>
 
@@ -23,7 +28,7 @@ export default {
                 </ul>
             </nav>
             <div class="proposal__watch">
-            <button class="proposal__watch__button">Посмотреть про нас</button>
+            <button class="proposal__watch__button" @click="goToAboutUs">Посмотреть про нас</button>
         </div>
         </div>
     </div>

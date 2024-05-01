@@ -34,8 +34,7 @@
         font-size: 16px;
         @include flex-c ($ai: center);
         gap: 10px;
-
-        //что?
+        
         :hover {
             background: $black-orange;
         }

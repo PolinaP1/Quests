@@ -4,13 +4,16 @@ import AboutusBeginning from '@/components/AboutUs/AboutusBeginning.vue';
 import SafetyAbout from '@/components/AboutUs/SafetyAbout.vue';
 import FriendlyTeam from '@/components/AboutUs/FriendlyTeam.vue';
 import OurContacts from '@/components/AboutUs/OurContacts.vue';
+import MapComponents from '../components/AboutUs/MapComponents.vue';
+
 export default {
     components:{
         AboutusBeginning,
         UniqueGuests,
         SafetyAbout,
         FriendlyTeam,
-        OurContacts
+        OurContacts,
+        MapComponents
     }
 }
 </script>
@@ -21,12 +24,11 @@ export default {
         <unique-guests/>
         <safety-about/>
         <friendly-team/>
+        <map-components />
         <our-contacts/>
     </div>
 </template>
 
 <style>
-    .about__us{
-        background: black;
-    }
+
 </style>

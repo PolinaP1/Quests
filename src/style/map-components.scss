@@ -1,0 +1,12 @@
+.map {
+    margin-top: 100px;
+    &__title{
+        font-weight: 600;
+        font-size: 35px;
+        background: $gradient;
+        @include back-col ($bc: text);
+        font-weight: 700;
+        padding-bottom: 20px;
+        @include flex-c ($ai: center);
+    }
+}

@@ -22,15 +22,48 @@
 
 @import './proposalabout.scss';
 
-.wrapper{
-    height: 100dvh;
-    width: 100dvw;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-}
-#app {
+@import './map-components.scss';
+
+.wrapper {
+  width: 100dvw;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
   font-family: Montserrat, sans-serif;
   color: white;
-  background: #000000;
   font-weight: normal;
+  overflow-y: hidden;
+  position: absolute;
+
+  &::after {
+    background: rgba(113, 136, 248, 0.19);
+    top: 1055px;
+    box-shadow: 1px 2px 150px 150px rgba(113, 136, 248, 0.2);
+    border-radius: 600px;
+    width: 290px;
+    height: 290px;
+    content: '';
+    position: absolute;
+    z-index: -1;
+  }
+
+  &::before {
+    background: rgba(113, 136, 248, 0.18);
+    top: 1875px;
+    border-radius: 600px;
+    box-shadow: 1px 2px 250px 150px rgba(113, 136, 248, 0.2);
+    width: 790px;
+    height: 925px;
+    left: 1025px;
+    content: '';
+    position: absolute;
+    z-index: -1;
+  }
+
+}
+
+.app {
+  position: relative;
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
 }

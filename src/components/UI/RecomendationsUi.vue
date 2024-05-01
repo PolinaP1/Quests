@@ -1,19 +1,23 @@
 <script>
 export default {
-    
+
 }
 </script>
 
 <template>
-    <div class="recomendation">
-        <h4 class="recomendation__postscript">-------  Выбор Illuminous</h4>
-        <h2 class="recomendation__title">Джокер</h2>
-        <h3 class="recomendation__descripion">Артур Флек - человек “улыбка” - приглашает всех в свой дом. Но какие тайны он содержит в своем логове?</h3>
-        <!-- <my-button>Подробнее<img src="@/img/Detailed.svg"/></my-button> -->
-        <button class="recomendation__detailed">Подробнее<img src="@/img/Detailed.svg"/></button>
+    <div class="container__recomendation">
+        <div class="recomendation">
+            <h4 class="recomendation__postscript">------- Выбор Illuminous</h4>
+            <h2 class="recomendation__title">Джокер</h2>
+            <h3 class="recomendation__descripion">Артур Флек - человек “улыбка” - приглашает всех в свой дом. Но какие
+                тайны
+                он содержит в своем логове?</h3>
+            <!-- <my-button>Подробнее<img src="@/img/Detailed.svg"/></my-button> -->
+            <div class="recomendation__detailed">
+                <button class="recomendation__detailed">Подробнее<img src="@/img/Detailed.svg" /></button>
+            </div>
+        </div>
     </div>
 </template>
 
-<style>
-    
-</style>
+<style></style>

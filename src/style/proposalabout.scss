@@ -61,5 +61,8 @@
             padding: 20px 20px;
             @include flex-c ($ai: center);
         }
+        :hover{
+            background: $black-orange;
+        }
     }
 }

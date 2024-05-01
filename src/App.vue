@@ -4,11 +4,8 @@ import FooterComponents from './components/FooterComponents.vue';
 
 export default {
   name: 'App',
-  data() {
-    return {
-    }
-  },
-  components:{
+
+  components: {
     HeaderComponents,
     FooterComponents
   }
@@ -16,15 +13,15 @@ export default {
 </script>
 
 <template>
-  <div class="wrapper">
-    <header-components/>
-    <main class="main">
-      <router-view>
-        
-      </router-view>
-    </main>
-    <footer-components/>
-  </div>
+    <div class="wrapper">
+      <header-components />
+      <main class="main">
+        <router-view>
+
+        </router-view>
+      </main>
+      <footer-components />
+    </div>
 </template>
 
 <style lang="scss">

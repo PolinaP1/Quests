@@ -22,3 +22,9 @@
     align-items: $ai;
     justify-content: center;
 }
+
+@mixin back-col ($bc: text) {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
