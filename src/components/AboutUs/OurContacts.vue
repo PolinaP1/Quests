@@ -19,7 +19,7 @@ components:{
 </script>
 
 <template>
-    <div class="container_about">
+    <div class="container__about">
         <div class="about">
             <h2 class="about__title">Контакты</h2>
             <ul class="about__descriptions">

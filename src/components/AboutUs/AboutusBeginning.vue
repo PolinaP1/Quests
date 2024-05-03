@@ -12,10 +12,8 @@ export default {
                 <h2 class="beginning__title">Об Illuminous</h2>
                 <h3 class="beginning__descripion">Приготовьтесь окунуться в мир другой реальности. Мы создаем
                     командно-интеллектуальные игры, которые завлекают настолько, что не хочется заканчивать. Так что...
-                    ПРИСТЕГНИТЕСЬ, мы взлетаем!</h3>
-                <div class="beginning__detailed">
-                    <button class="beginning__detailed">Подробнее<img src="@/img/Detailed.svg" class="detailed" /></button>
-                </div>
+                    <span class="about__brevity__selection">ПРИСТЕГНИТЕСЬ, мы взлетаем!</span>
+                </h3>
             </div>
         </div>
     </div>

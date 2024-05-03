@@ -30,7 +30,7 @@
     }
 }
 
-.container_about {
+.container__about {
     @include flex-c ($ai: center);
     gap: 50px;
     margin-top: 100px;
@@ -39,10 +39,12 @@
 .safey__img {
     width: 360px;
     height: 280px;
+    transform: rotateY(180deg);
 }
 
 .about__img {
     height: 290px;
+    width: 360px;
 }
 
 .sotial__network__size .network__item {
@@ -53,3 +55,13 @@
     height: 390px;
 }
 
+.flip__horizontal {
+    @include flex-c ($ai: center);
+    gap: 70px;
+    margin-top: 100px;
+    transform: rotateY(180deg);
+
+    &__about{
+        transform: rotateY(180deg);
+    }
+}

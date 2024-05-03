@@ -6,9 +6,6 @@ export default {
             routes: routes
         }
     },
-    methods: {
-        
-    },
 }
 </script>
 
