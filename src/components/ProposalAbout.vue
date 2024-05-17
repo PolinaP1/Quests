@@ -1,11 +1,15 @@
 <script>
+import MyButton from './UI/MyButton.vue';
 
 export default {
     methods: {
-        goToAboutUs(){
+        goToAboutUs() {
             this.$router.push('/About')
         }
     },
+    components: {
+        MyButton
+    }
 }
 </script>
 
@@ -28,8 +32,8 @@ export default {
                 </ul>
             </nav>
             <div class="proposal__watch">
-            <button class="proposal__watch__button" @click="goToAboutUs">Посмотреть про нас</button>
-        </div>
+                <my-button @click="goToAboutUs">Посмотреть про нас</my-button>
+            </div>
         </div>
     </div>
 </template>

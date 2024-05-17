@@ -2,13 +2,13 @@
     @include flex-c ($ai: center);
     background: $dark-grey;
     height: 287px;
-    gap: 100px;
     padding: 50px 150px 50px 250px;
 
     &__container {
         @include flex-b ($ai: center);
+        gap: 100px;
         width: 50vw;
-        width: 1025px;
+        width: 1045px;
     }
 
   &::after {
@@ -41,7 +41,7 @@
 }
 
 .footer__link {
-    width: 50px;
+    width: 90px;
     font-size: 16px;
 
     &__title {

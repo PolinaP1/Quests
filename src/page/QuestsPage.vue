@@ -1,14 +1,16 @@
 <script>
-
+import QuestList from '../components/UI/Quests/QuestsList.vue';
 
 export default {
-
+components:{
+    QuestList
+}
 }
 </script>
 
 <template>
-    <div>
-        
+    <div class="quests">
+        <quest-list/>
     </div>
 </template>
 

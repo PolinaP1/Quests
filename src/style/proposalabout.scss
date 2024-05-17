@@ -40,29 +40,11 @@
             gap: 35px;
         }
 
-        &__li{
+        &__li {
             display: flex;
             justify-content: left;
             align-items: center;
             gap: 30px;
-        }
-    }
-
-    &__watch {
-        @include flex-c ($ai: center);
-
-        &__button {
-            color: white;
-            background: $orange;
-            border-radius: 36px;
-            width: 210px;
-            height: 40px;
-            font-size: 16px;
-            padding: 20px 20px;
-            @include flex-c ($ai: center);
-        }
-        :hover{
-            background: $black-orange;
         }
     }
 }

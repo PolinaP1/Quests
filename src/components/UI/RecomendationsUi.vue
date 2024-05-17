@@ -1,6 +1,10 @@
 <script>
-export default {
+import MyButton from '../UI/MyButton.vue';
 
+export default {
+components:{
+    MyButton
+}
 }
 </script>
 
@@ -12,10 +16,7 @@ export default {
             <h3 class="recomendation__descripion">Артур Флек - человек “улыбка” - приглашает всех в свой дом. Но какие
                 тайны
                 он содержит в своем логове?</h3>
-            <!-- <my-button>Подробнее<img src="@/img/Detailed.svg"/></my-button> -->
-            <div class="recomendation__detailed">
-                <button class="recomendation__detailed">Подробнее<img src="@/img/Detailed.svg" /></button>
-            </div>
+            <my-button>Подробнее<img src="@/img/Detailed.svg"/></my-button>
         </div>
     </div>
 </template>

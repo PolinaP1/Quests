@@ -13,15 +13,15 @@ export default {
 </script>
 
 <template>
-    <div class="wrapper">
-      <header-components />
-      <main class="main">
-        <router-view>
+  <div class="wrapper">
+    <header-components />
+    <main class="main">
+      <router-view>
 
-        </router-view>
-      </main>
-      <footer-components />
-    </div>
+      </router-view>
+    </main>
+    <footer-components />
+  </div>
 </template>
 
 <style lang="scss">
