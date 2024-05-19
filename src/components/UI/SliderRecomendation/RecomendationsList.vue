@@ -1,15 +1,28 @@
 <script>
 import axios from 'axios';
-import MyButton from '../../UI/MyButton.vue';
+import ArrowSlider from '../../UI/ArrowSlider.vue';
 import RecomendationsItem from './RecomendationsItem.vue';
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/css';
+import { Navigation } from 'swiper/modules';
+import 'swiper/css/navigation';
 
 const baseUrl = "http://localhost:3000/todos";
 
 export default {
     data() {
+        const onSwiper = (swiper) => {
+            console.log(swiper);
+        };
+        const onSlideChange = () => {
+            console.log('slide change');
+        };
         return {
             todos: [],
-            todoName: ''
+            todoName: '',
+            modules: [Navigation],
+            onSwiper,
+            onSlideChange
         }
     },
 
@@ -26,57 +39,30 @@ export default {
     },
 
     components: {
+        Swiper,
+        SwiperSlide,
         RecomendationsItem,
-        MyButton
+        ArrowSlider
     },
 
-    computed: {
-        activeSlide() {
-            return this.todos.find(todo => todo.isActive);
-        }
-    },
-
-    mounted() {
-        setInterval(() => {
-            this.nextSlide();
-        }, 1000);
-    },
-    
-    methods: {
-        nextSlide() {
-            const lastSlideIndex = this.todos.length - 1;
-            const currentSlideIndex = this.todos.findIndex(todo => todo.isActive);
-            const nextSlideIndex = currentSlideIndex === lastSlideIndex ? 0 : currentSlideIndex + 1;
-
-            this.todos[currentSlideIndex].isActive = false;
-            this.todos[nextSlideIndex].isActive = true;
-        },
-        // prevSlide() {
-        //     const lastSlideIndex = this.todos.length - 1;
-        //     const currentSlideIndex = this.todos.findIndex(todo => todo.isActive);
-        //     const prevSlideIndex = currentSlideIndex === 0 ? lastSlideIndex : currentSlideIndex - 1;
-
-        //     this.todos[currentSlideIndex].isActive = false;
-        //     this.todos[prevSlideIndex].isActive = true;
-        // }
-    }
 }
 </script>
 
 <template>
-    <div class="recomendations">
-        <div class="recomendations__carousel">
-            <section class="carousel__slide">
-                <recomendations-item v-for="(todo, index) in todos" :key="index" :todo="todo" v-bind:style="{ transform: 'translateX(' + (index * -100) + '%)' }"/>
-            </section>
-        </div>
-        <div class="recomendations__controls">
-            <!-- <button @click="prevSlide" class="prev"><img src="@/img/Arrow.svg"/></button> -->
-            <my-button @click="nextSlide" class="next"><img src="@/img/Arrow.svg"/></my-button>
-        </div>
-    </div>
+    <swiper class="recomendations" :navigation="true" :modules="modules" @swiper="onSwiper"
+        @slideChange="onSlideChange">
+        <swiper-slide>
+            <div class="recomendations__carousel">
+                <section class="carousel__slide">
+                    <recomendations-item v-for="todo in todos" :key="todo.id" :todo="todo" />
+                </section>
+            </div>
+            <div class="recomendations__controls">
+                <!-- <button @click="prevSlide" class="prev"><img src="@/img/Arrow.svg"/></button> -->
+                <arrow-slider @click="nextSlide" class="next"></arrow-slider>
+            </div>
+        </swiper-slide>
+    </swiper>
 </template>
 
-<style>
-
-</style>
+<style></style>
