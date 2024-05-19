@@ -1,21 +1,30 @@
 <script>
 import FilteringquestsUi from '@/components/UI/Filter/FilteringquestsUi.vue';
-import RecomendationsUi from '@/components/UI/RecomendationsUi.vue';
+import RecomendationsList from '@/components/UI/SliderRecomendation/RecomendationsList.vue';
 import ProposalAbout from '@/components/ProposalAbout.vue';
+import QuestList from '../components/UI/Quests/QuestsList.vue';
 
 export default {
+    data() {
+        return {
+            quantity: [1,2,3,4]
+        }
+    },
+    
     components: {
-        RecomendationsUi,
+        RecomendationsList,
         FilteringquestsUi,
-        ProposalAbout
+        ProposalAbout,
+        QuestList
     }
 }
 </script>
 
 <template>
     <div class="home">
-        <recomendations-ui />
+        <recomendations-list />
         <filteringquests-ui />
+        <quest-list/>
         <proposal-about />
     </div>
 </template>

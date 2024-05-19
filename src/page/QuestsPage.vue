@@ -1,16 +1,22 @@
 <script>
 import QuestList from '../components/UI/Quests/QuestsList.vue';
+import FilteringquestsUi from '@/components/UI/Filter/FilteringquestsUi.vue';
+import RecomendationsList from '@/components/UI/SliderRecomendation/RecomendationsList.vue';
 
 export default {
-components:{
-    QuestList
-}
+    components: {
+        RecomendationsList,
+        FilteringquestsUi,
+        QuestList
+    }
 }
 </script>
 
 <template>
     <div class="quests">
-        <quest-list/>
+        <recomendations-list />
+        <filteringquests-ui />
+        <quest-list />
     </div>
 </template>
 

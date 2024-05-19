@@ -1,0 +1,53 @@
+.quests__todos{
+    align-items: center;
+    gap: 70px;
+    width: 1320px;
+    padding-left: 170px;
+    column-count: 2;
+}
+
+.quest__item {
+    margin-bottom: 100px;
+    display: block;
+    width: 525px;
+    height: 420px;
+    background: $dark-grey;
+    border-radius: 20px;
+    border-bottom: 4px solid #fb8177;
+    font-size: 18px;
+
+    &__img{
+        border-radius: 20px;
+    }
+
+    &__information {
+        padding-left: 35px;
+        padding-top: 25px;
+
+        &__title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        &__complexity {
+            @include flex-b ($ai: center);
+            gap: 17px;
+            width: 305px;
+            margin-bottom: 25px;
+            color: $orange;
+            font-size: 20px;
+
+            &__icon {
+                width: 25px;
+                height: 25px;
+            }
+
+            &__separation{
+                @include flex-b ($ai: center);
+                padding-left: 20px;
+                gap: 30px;
+            }
+        }
+    }
+}

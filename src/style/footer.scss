@@ -3,6 +3,7 @@
     background: $dark-grey;
     height: 287px;
     padding: 50px 150px 50px 250px;
+    margin-top: 50px;
 
     &__container {
         @include flex-b ($ai: center);
