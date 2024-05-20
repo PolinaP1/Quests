@@ -1,4 +1,15 @@
 .arrow__slider{
-    width: 37px;
+    width: 45px;
     height: 35px;
+    border: none;
+    background-color: transparent;
+    @include flex-c ($ai: center);
+}
+
+.arrow__slider img{
+    transition: (0.7s);
+}
+
+.arrow__slider img:hover{
+    transform: scale(1.3);
 }

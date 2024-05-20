@@ -1,6 +1,10 @@
 <script>
 import HeaderComponents from './components/HeaderComponents.vue';
 import FooterComponents from './components/FooterComponents.vue';
+import SwiperCore from "swiper";
+import { Navigation } from "swiper/modules";
+import 'swiper/swiper-bundle.css';
+SwiperCore.use([Navigation]);
 
 export default {
   name: 'App',

@@ -47,4 +47,9 @@
             gap: 30px;
         }
     }
+
+    &__watch{
+        @include flex-c ($ai: center);
+
+    }
 }

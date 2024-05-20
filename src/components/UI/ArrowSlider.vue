@@ -9,7 +9,7 @@ export default {
 </script>
 
 <template>
-    <button class="arrow__slider">
+    <button class="arrow__slider" @click="$emit('click')">
         <img src="@/img/Arrow.svg"/>
     </button>
 </template>

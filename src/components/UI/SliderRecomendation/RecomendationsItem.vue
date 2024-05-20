@@ -16,7 +16,7 @@ export default {
 </script>
 
 <template>
-    <div>
+    <div class="slide" v-if="todo">
         <img :src="require(`@/img/${todo.img}.svg`)" class="recomendation__img">
         <div class="container__recomendation">
             <div class="recomendation">
@@ -27,6 +27,7 @@ export default {
             </div>
         </div>
     </div>
+    <h1 v-else>YTvn</h1>
 </template>
 
 <style></style>

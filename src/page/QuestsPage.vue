@@ -1,5 +1,5 @@
 <script>
-import QuestList from '../components/UI/Quests/QuestsList.vue';
+// import QuestList from '../components/UI/Quests/QuestsList.vue';
 import FilteringquestsUi from '@/components/UI/Filter/FilteringquestsUi.vue';
 import RecomendationsList from '@/components/UI/SliderRecomendation/RecomendationsList.vue';
 
@@ -7,7 +7,7 @@ export default {
     components: {
         RecomendationsList,
         FilteringquestsUi,
-        QuestList
+        // QuestList
     }
 }
 </script>
@@ -16,7 +16,7 @@ export default {
     <div class="quests">
         <recomendations-list />
         <filteringquests-ui />
-        <quest-list />
+        <!-- <quest-list /> -->
     </div>
 </template>
 
