@@ -1,9 +1,10 @@
 <script>
 // import axios from 'axios';
-import FilteringquestsUi from '@/components/UI/Filter/FilteringquestsUi.vue';
+import FilteringList from '@/components/UI/Filter/FilteringList.vue';
 import RecomendationsList from '@/components/UI/SliderRecomendation/RecomendationsList.vue';
 import ProposalAbout from '@/components/ProposalAbout.vue';
 import QuestList from '../components/UI/Quests/QuestsList.vue';
+import SwiperReviewsCompany from '../components/ReviewsCompany/SwiperReviewsCompany.vue';
 
 // const baseUrl = "http://localhost:3000/todos";
 
@@ -58,9 +59,10 @@ export default {
 
     components: {
         RecomendationsList,
-        FilteringquestsUi,
+        FilteringList,
         ProposalAbout,
-        QuestList
+        QuestList,
+        SwiperReviewsCompany
     }
 }
 </script>
@@ -68,10 +70,11 @@ export default {
 <template>
     <div class="home">
         <recomendations-list />
-        <filteringquests-ui />
+        <filtering-list />
         <quest-list />
         <!-- <quest-list v-for="todoss in matchingElements" :key="todoss.id" :todoss="todoss" /> -->
         <proposal-about />
+        <swiper-reviews-company/>
     </div>
 </template>
 

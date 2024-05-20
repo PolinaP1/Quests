@@ -7,7 +7,7 @@ import 'swiper/css/navigation';
 
 import { Swiper, SwiperSlide } from "swiper/vue";
 
-const reviewsCompanyUrl = "http://localhost:3000/todos";
+const reviewsCompanyUrl = "http://localhost:4000/reviews-company";
 
 export default {
     data() {
@@ -39,12 +39,14 @@ export default {
 </script>
 
 <template>
-    <swiper class="reviews_company" :slides-per-view="2" :navigation="{ nextEl: '.nextArrow', prevEl: '.prevArrow' }">
-        <div class="reviews_company">
-            <arrow-slider class="prevArrow"/>
-            <arrow-slider class="nextArrow"/>
+    <h2 class="reviews__title">Отзывы о нашем Illuminous</h2>
+    <h3 class="reviews__poscript">Реакции наших клиентов</h3>
+    <swiper class="reviews__company" :slides-per-view="2" :navigation="{ nextEl: '.review__nextArrow', prevEl: '.review__prevArrow' }">
+        <div class="reviews__company__arrow">
+            <arrow-slider class="review__prevArrow"/>
+            <arrow-slider class="review__nextArrow"/>
         </div>
-        <swiper-slide v-for="review in reviews" :key="review.id" :review="review" class="review_company__slide">
+        <swiper-slide v-for="review in reviews" :key="review.id" :review="review" class="review__company__slide">
             <slide-review-company :review="review" />
         </swiper-slide>
     </swiper>

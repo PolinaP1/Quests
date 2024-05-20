@@ -13,9 +13,9 @@ export default {
     <div class="review__slide">
         <div class="review__slide__user">
         <img src="@/img/UserReview.svg"/>
-        <h2 class="review__slide__user__name"> {{ review.user_name }}</h2>
+        <h2> {{ review.user_name }}</h2>
         </div>
-        <h2 class="review__slide__review">{{ review.user_review }}</h2>
+        <h2 class="review__slide__description">{{ review.user_review }}</h2>
     </div>
 </template>
 

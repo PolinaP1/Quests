@@ -1,0 +1,70 @@
+.reviews__title {
+    margin-top: 100px;
+    font-size: 32px;
+    @include flex-c ($ai: center);
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.reviews__poscript {
+    font-size: 24px;
+    @include flex-c ($ai: center);
+    color: $grey;
+    margin-bottom: 60px;
+}
+
+.reviews__company {
+    display: flex;
+    align-items: center;
+    width: 1100px;
+    margin-bottom: 50px;
+
+    &__arrow {
+        position: absolute;
+        z-index: 4;
+        bottom: 100px;
+        left: 0;
+        right: 0;
+        @include flex-b ($ai: center);
+        overflow: hidden;
+        margin: auto;
+    }
+
+    &__slide {
+        @include flex-c ($ai: center);
+        gap: 40px;
+    }
+}
+
+.review__prevArrow {
+    transform: rotateY(180deg);
+}
+
+.review__slide {
+    margin-left: 45px;
+    margin-right: 85px;
+    position: relative;
+    padding-top: 10px;
+    padding-left: 15px;
+    width: 460px;
+    height: 225px;
+    background: $dark-grey;
+    border-radius: 10px;
+
+    &__user {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        font-size: 30px;
+        font-weight: 700;
+        margin-bottom: 15px;
+    }
+
+    &__description {
+        width: 430px;
+        @include flex-b ($ai: center);
+        color: $grey;
+        line-height: 25px;
+        font-size: 18px;
+    }
+}

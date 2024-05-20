@@ -1,5 +1,5 @@
 <script>
-// import TypeUi from './TypeUi.vue';
+// import FilteringItem from './FilteringItem.vue';
 export default {
     // data() {
     //     return {
@@ -12,7 +12,7 @@ export default {
     // },
 
     // components: {
-    //     TypeUi
+    //     FilteringItem
     // },
 
 }
@@ -23,7 +23,7 @@ export default {
         <div class="filtering">
             <h2 class="filtering__title">Найдите подходящий квест</h2>
             <h2 class="filtering__description">По критериям можно найти лучший для вас вариант</h2>
-            <!-- <type-ui v-model="selectedSort" :options="sortOptions" /> -->
+            <!-- <filtering-iItem v-model="selectedSort" :options="sortOptions" /> -->
         </div>
     </div>
 </template>
