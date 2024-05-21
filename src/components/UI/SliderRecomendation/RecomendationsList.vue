@@ -46,8 +46,8 @@ export default {
             <arrow-slider class="prevArrow"/>
             <arrow-slider class="nextArrow"/>
         </div>
-        <swiper-slide v-for="todo in todos" :key="todo.id" :todo="todo" class="recomendations__slide">
-            <recomendations-item :todo="todo" />
+        <swiper-slide v-for="todo in todos.slice(0,10)" :key="todo.id" :todo="todo" class="recomendations__slide">
+            <recomendations-item :todo="todo"/>
         </swiper-slide>
     </swiper>
 </template>

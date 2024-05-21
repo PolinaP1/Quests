@@ -1,12 +1,12 @@
 <script>
-// import axios from 'axios';
+import axios from 'axios';
 import FilteringList from '@/components/UI/Filter/FilteringList.vue';
 import RecomendationsList from '@/components/UI/SliderRecomendation/RecomendationsList.vue';
 import ProposalAbout from '@/components/ProposalAbout.vue';
 import QuestList from '../components/UI/Quests/QuestsList.vue';
 import SwiperReviewsCompany from '../components/ReviewsCompany/SwiperReviewsCompany.vue';
 
-// const baseUrl = "http://localhost:3000/todos";
+const baseUrl = "http://localhost:3000/todos";
 
 export default {
     data() {
@@ -19,43 +19,43 @@ export default {
         }
     },
 
-    // async created() {
-    //     try {
-    //         const res = await axios.get(baseUrl);
-    //         this.todos = res.data;
-    //     }
-    //     catch (e) {
-    //         console.error(e);
-    //     }
-    // },
+    watch: {
+        todos() {
+            this.generateRandomNumbers();
+        }
+    },
 
-    // mounted() {
-    //     this.generateRandomNumbers()
-    //     console.log('gghh')
-    //     this.getFiltering()
-    //     console.log(this.todos)
-    // },
+    async created() {
+        try {
+            const res = await axios.get(baseUrl);
+            this.todos = res.data;
+        }
+        catch (e) {
+            console.error(e);
+        }
+    },
 
-    // methods: {
-    //     generateRandomNumbers() {
-    //         for (let i = 0; i < 2; i++) {
-    //             this.randomNumbers.push(this.getRandomInt(20));
-    //         }
-    //     },
-    //     getRandomInt(max) {
-    //         return Math.floor(Math.random() * max) + 1;
-    //     },
 
-    //     getFiltering() {
-    //         this.todos.forEach(item => { 
-    //             if (this.randomNumbers.includes(item.id)) { 
-    //                 this.matchingElements.push(item); 
-    //             }
-    //         });
-    //         console.log(this.randomNumbers)
-    //     }
+    methods: {
+        getFiltering() {
+            this.todos.forEach(item => {
+                if (this.randomNumbers.includes(Number(item.id))) {
+                    this.matchingElements.push(item);
+                }
+            });
+        },
 
-    // },
+        generateRandomNumbers() {
+            for (let i = 0; i < 4; i++) {
+                this.randomNumbers.push(this.getRandomInt(20));
+            }
+            this.getFiltering();
+        },
+        getRandomInt(max) {
+            return Math.floor(Math.random() * max) + 1;
+        }
+
+    },
 
     components: {
         RecomendationsList,
@@ -71,15 +71,10 @@ export default {
     <div class="home">
         <recomendations-list />
         <filtering-list />
-        <quest-list />
-        <!-- <quest-list v-for="todoss in matchingElements" :key="todoss.id" :todoss="todoss" /> -->
+        <quest-list :todoss="matchingElements"/>
         <proposal-about />
-        <swiper-reviews-company/>
+        <swiper-reviews-company />
     </div>
 </template>
 
-<style>
-.home {
-    background: black;
-}
-</style>
+<style></style>

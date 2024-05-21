@@ -1,19 +1,21 @@
 <script>
-// import FilteringItem from './FilteringItem.vue';
+import findingsfiltering from '../../../utils/findingsfiltering.js';
+import FilteringItem from './FilteringItem.vue';
 export default {
-    // data() {
-    //     return {
-    //         selectedSort: '',
-    //         sortOptions: [
-    //             { value: 'with_actors', name: 'с актерами' },
-    //             { value: 'without_actors', name: 'без актеров' },
-    //         ]
-    //     }
-    // },
+    data() {
+        return {
+            findingsfiltering: findingsfiltering,
+            selectedSort: ''
+        }
+    },
 
-    // components: {
-    //     FilteringItem
-    // },
+    components: {
+        FilteringItem
+    },
+
+    mounted() {
+        console.log(this.selectedSort)
+    },
 
 }
 </script>
@@ -23,7 +25,7 @@ export default {
         <div class="filtering">
             <h2 class="filtering__title">Найдите подходящий квест</h2>
             <h2 class="filtering__description">По критериям можно найти лучший для вас вариант</h2>
-            <!-- <filtering-iItem v-model="selectedSort" :options="sortOptions" /> -->
+            <filtering-item v-model="selectedSort" v-for="findingsfiltering in findingsfiltering" :key="findingsfiltering.id" :findingsfiltering="findingsfiltering" />
         </div>
     </div>
 </template>

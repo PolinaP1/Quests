@@ -1,31 +1,37 @@
-<!-- <script>
-import { ComboBoxComponent as EjsCombobox } from "@syncfusion/ej2-vue-dropdowns";
+<script>
 export default {
+data() {
+    return {
+        filtering: {
+            type: String,
+        }
+    }
+},
+
     props:{
-        modelValue:{
-            type: String
-        },
-        options:{
-            type: Array,
-            default: () => []
+        findingsfiltering:{
+            type: Object,
+            reguired: true
         }
     },
+
     methods: {
         changeOption(event){
-            this.$emit('update:modelValue', event)
+            this.$emit('update:filtering', event.target.value);
+            console.log(this.filtering)
         }
-    },
+        
+    }
 }
 </script>
 
 <template>
-    <EjsCombobox v-model="modelValue" @change="changeOption">
-        <option disabled value="">Тип</option>
-        <option v-for="option in options" :key="option.value" value="option.value"></option>
-        {{ option.name }}
-    </EjsCombobox>
+    <select v-model="filtering" @change="changeOption">
+        <option selected disabled :value="findingsfiltering.designation">{{ findingsfiltering.designation }}</option>
+        <option :value="inside.inside" v-for="inside in findingsfiltering.insides" :key="inside" :inside="inside">{{ inside.inside }}</option>
+    </select>
 </template>
 
 <style>
     
-</style> -->
+</style>

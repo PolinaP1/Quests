@@ -35,3 +35,5 @@ const findingsfiltering = [
         ]
     }
 ]
+
+export default findingsfiltering
