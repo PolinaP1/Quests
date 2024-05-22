@@ -25,12 +25,14 @@
     }
 
     &__item {
+        width: 70vw;
         @include flex-c ($ai: center);
         gap: 30px;
     }
 
     &__information {
         display: grid;
+        width: 70vw;
         align-items: center;
 
         &__select {

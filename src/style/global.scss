@@ -12,8 +12,11 @@
 
 @import './ui/mybutton.scss';
 @import './ui/arrowslider.scss';
+@import './ui/shedulebutton.scss';
 
 @import './ui/recomendation.scss';
+
+@import './switchfiltering.scss';
 
 @import './ui/filteringquests.scss';
 
@@ -29,6 +32,11 @@
 
 @import './reviews-company.scss';
 
+@import './questpage/demonstration.scss';
+@import './questpage/specifications.scss';
+@import './questpage/legendquest.scss';
+@import './questpage/sheduleguest.scss';
+
 .wrapper {
   width: 100dvw;
   display: grid;
@@ -36,7 +44,7 @@
   font-family: Montserrat, sans-serif;
   color: white;
   font-weight: normal;
-  overflow-y: hidden;
+  overflow-x: hidden;
   position: absolute;
 
   &::after {

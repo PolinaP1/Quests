@@ -46,9 +46,9 @@ export default {
 
         },
 
-        clearFilter(inside) {
-            this.$emit('clearFilter');
-            this.$emit('handleGettingData', inside, this.findingsfiltering.designation);
+        clearFilter() {
+            this.selectedSort = '';
+            this.$emit('handleGettingData', '', this.findingsfiltering.designation);
         },
 
         viewOption(inside) {
@@ -64,7 +64,7 @@ export default {
         <div class="filtering__information__select">
                 <img :src="require(`@/img/${findingsfiltering.img}.svg`)" />
                 <h2>{{ selectedSort ? selectedSort : findingsfiltering.designation }}</h2>
-            <button class="filtering__information__button" @click="clearFilter">
+            <button class="filtering__information__button" @click="clearFilter('')">
                 <img src="@/img/CancelFiltering.svg" />
             </button>
         </div>

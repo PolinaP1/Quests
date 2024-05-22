@@ -1,6 +1,7 @@
 <script>
 import axios from 'axios';
 import RecomendationsList from '@/components/UI/SliderRecomendation/RecomendationsList.vue';
+import SwitchFiltering from '@/components/SwitchFiltering.vue';
 import ProposalAbout from '@/components/ProposalAbout.vue';
 import QuestList from '../components/UI/Quests/QuestsList.vue';
 import SwiperReviewsCompany from '../components/ReviewsCompany/SwiperReviewsCompany.vue';
@@ -45,7 +46,7 @@ export default {
         },
 
         generateRandomNumbers() {
-            for (let i = 0; i < 4; i++) {
+            for (let i = 1; i < 5; i++) {
                 this.randomNumbers.push(this.getRandomInt(20));
             }
             this.getFiltering();
@@ -58,6 +59,7 @@ export default {
 
     components: {
         RecomendationsList,
+        SwitchFiltering,
         ProposalAbout,
         QuestList,
         SwiperReviewsCompany
@@ -68,6 +70,7 @@ export default {
 <template>
     <div class="home">
         <recomendations-list />
+        <switch-filtering/>
         <quest-list :todos="matchingElements"/>
         <proposal-about />
         <swiper-reviews-company />

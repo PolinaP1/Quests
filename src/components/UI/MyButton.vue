@@ -9,7 +9,7 @@ export default {
 </script>
 
 <template>
-    <button class="my__button">
+    <button class="my__button" @click="$emit('click')">
         <slot></slot>
     </button>
 </template>

@@ -1,0 +1,71 @@
+.specifications {
+    @include flex-c ($ai: center);
+    width: 100dvw;
+    font-size: 24px;
+    margin-bottom: 100px;
+
+    &__item {
+        width: 70vw;
+        @include flex-c ($ai: center);
+        gap: 75px;
+
+        &__complexity {
+            width: 200px;
+
+            &__title {
+                background:
+                    linear-gradient(#000 0 0) padding-box,
+                    linear-gradient(90deg, #3e5bce 0%, #ff1900 100%) border-box;
+                border: 3px solid transparent;
+                height: 40px;
+                border-radius: 20px;
+            }
+
+            &__icons {
+                margin-top: 15px;
+                @include flex-b ($ai: center);
+
+                &__icon{
+                    width: 25px;
+                    height: 25px;
+                }
+            }
+        }
+
+        &__actors {
+            width: 140px;
+
+            &__title {
+                background:
+                    linear-gradient(#000 0 0) padding-box,
+                    linear-gradient(90deg, #3e5bce 0%, #ff1900 100%) border-box;
+                border: 3px solid transparent;
+                height: 40px;
+                border-radius: 20px;
+            }
+        }
+
+        &__playersage {
+            width: 140px;
+
+            &__title {
+                background:
+                    linear-gradient(#000 0 0) padding-box,
+                    linear-gradient(90deg, #3e5bce 0%, #ff1900 100%) border-box;
+                border: 3px solid transparent;
+                height: 40px;
+                border-radius: 20px;
+            }
+        }
+
+        &__text {
+            @include flex-c ($ai: center);
+            padding: 5px 20px;
+        }
+
+        &__reply {
+            margin-top: 15px;
+            @include flex-c ($ai: center);
+        }
+    }
+}

@@ -1,0 +1,12 @@
+.shedule__button{
+    font-size: 18px;
+    border: 2px solid $dark-blue;
+    padding: 8px 25px;
+    background: none;
+    color: white;
+    border-radius: 20px;
+
+    &:hover{
+        background: $blue;
+    }
+}
