@@ -1,13 +1,18 @@
 .filtering {
-    width: 855px;
-    margin-top: 25px;
-    width: 50vw;
+    @include flex-c ($ai: center);
+    width: 100%;
+    margin-bottom: 100px;
+
+    &__quests {
+        margin-top: 25px;
+        width: 70vw;
+    }
 
     &__title {
         font-size: 24px;
         font-weight: 700;
         padding-bottom: 15px;
-        padding-left: 25px;
+        padding-left: 75px;
     }
 
     &__description {
@@ -15,12 +20,67 @@
         color: $grey;
         width: 375px;
         padding-bottom: 20px;
-        padding-left: 25px;
+        padding-left: 75px;
         line-height: 25px;
     }
-}
 
-.filtering__quests {
-    @include flex-c ($ai:center);
-    width: 100%;
+    &__item {
+        @include flex-c ($ai: center);
+        gap: 30px;
+    }
+
+    &__information {
+        display: grid;
+        align-items: center;
+
+        &__select {
+            background:
+                linear-gradient($dark-grey 0 0) padding-box,
+                linear-gradient(180deg, #465ec0 0%, #fa2209 100%) border-box;
+            border: 1px solid transparent;
+            border-radius: 10px;
+            width: 220px;
+            height: 75px;
+            font-size: 20px;
+            @include flex-b ($ai: center);
+            padding-left: 10px;
+
+            &:hover {
+                background:
+                    linear-gradient(#202020 0 0) padding-box,
+                    linear-gradient(180deg, #465ec0 0%, #fa2209 100%) border-box;
+                border: 2px solid transparent;
+            }
+        }
+
+        &__button {
+            background: #2e2e2e;
+            height: 73px;
+            border: none;
+            border-radius: 0px 10px 10px 0px;
+
+            &:hover {
+                background: #333333;
+            }
+        }
+    }
+
+    &__option {
+        font-size: 20px;
+        list-style: none;
+        background: $dark-grey;
+        border-radius: 10px;
+        margin-top: 5px;
+        position: absolute;
+        width: 170px;
+
+        &__inside {
+            padding: 7px 15px 7px 10px;
+
+            &:hover {
+                background: #2f4cc2cb;
+                border-radius: 10px;
+            }
+        }
+    }
 }

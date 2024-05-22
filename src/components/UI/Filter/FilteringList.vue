@@ -1,31 +1,41 @@
 <script>
 import findingsfiltering from '../../../utils/findingsfiltering.js';
-import FilteringItem from './FilteringItem.vue';
+import FilteringSelect from './FilteringSelect.vue';
 export default {
     data() {
         return {
             findingsfiltering: findingsfiltering,
-            selectedSort: ''
+            updateFilter: false
         }
     },
 
-    components: {
-        FilteringItem
+    methods: {
+        clearFilter() {
+            this.updateFilter = !this.updateFilter
+        },
+
+        handleGettingData(info, type){
+            this.$emit("handleGettingData", info, type)
+        }
+
     },
 
-    mounted() {
-        console.log(this.selectedSort)
+    components: {
+        FilteringSelect
     },
 
 }
 </script>
 
 <template>
-    <div class="filtering__quests">
-        <div class="filtering">
+    <div class="filtering">
+        <div class="filtering__quests">
             <h2 class="filtering__title">Найдите подходящий квест</h2>
             <h2 class="filtering__description">По критериям можно найти лучший для вас вариант</h2>
-            <filtering-item v-model="selectedSort" v-for="findingsfiltering in findingsfiltering" :key="findingsfiltering.id" :findingsfiltering="findingsfiltering" />
+            <div class="filtering__item">
+                <filtering-select v-for="findingsfiltering in findingsfiltering" :key="findingsfiltering.id"
+                    :findingsfiltering="findingsfiltering" :updateFilter="updateFilter" @clearFilter="clearFilter" @handleGettingData="handleGettingData"/>
+            </div>
         </div>
     </div>
 </template>

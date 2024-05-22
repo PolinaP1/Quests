@@ -1,6 +1,7 @@
 const findingsfiltering = [
     {
         id: "1",
+        img: "TipFilter",
         designation: "Тип",
         insides: [
             {inside: "С актерами"},
@@ -9,6 +10,7 @@ const findingsfiltering = [
     },
     {
         id: "2",
+        img: "ViewFilter",
         designation: "Вид",
         insides: [
             {inside: "Страшные"},
@@ -17,6 +19,7 @@ const findingsfiltering = [
     },
     {
         id: "3",
+        img: "PlayersFilter",
         designation: "Игроки",
         insides: [
             {inside: "2"},
@@ -27,6 +30,7 @@ const findingsfiltering = [
     },
     {
         id: "4",
+        img: "AgeFilter",
         designation: "Возраст",
         insides: [
             {inside: "14+"},

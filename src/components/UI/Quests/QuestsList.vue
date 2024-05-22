@@ -2,14 +2,8 @@
 import QuestItem from './QuestItem.vue';
 
 export default {
-    data() {
-        return {
-            
-        }
-    },
-
     props: {
-        todoss: {
+        todos: {
             type: Object,
             required: true,
         }
@@ -17,10 +11,6 @@ export default {
 
     components: {
         QuestItem
-    },
-
-    mounted(){
-        // console.log(this.todoss)
     }
 }
 </script>
@@ -28,7 +18,7 @@ export default {
 <template>
     <div class="quests">
         <section class="quests__todos">
-            <quest-item v-for="todo in todoss" :key="todo.id" :todo="todo" />
+            <quest-item v-for="todo in todos" :key="todo.id" :todo="todo" />
         </section>
     </div>
 </template>

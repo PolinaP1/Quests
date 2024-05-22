@@ -1,4 +1,6 @@
 .my__button {
+    position: absolute;
+    z-index: 4;
     background: $orange;
     border-radius: 36px;
     color: white;

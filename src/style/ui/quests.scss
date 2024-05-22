@@ -1,9 +1,11 @@
 .quests__todos{
+    display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 70px;
     width: 1320px;
     padding-left: 170px;
-    column-count: 2;
+    flex-wrap: wrap;
 }
 
 .quest__item {
@@ -28,6 +30,7 @@
             font-size: 36px;
             font-weight: 700;
             margin-bottom: 12px;
+            width: 525px;
         }
 
         &__complexity {

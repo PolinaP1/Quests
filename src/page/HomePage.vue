@@ -1,6 +1,5 @@
 <script>
 import axios from 'axios';
-import FilteringList from '@/components/UI/Filter/FilteringList.vue';
 import RecomendationsList from '@/components/UI/SliderRecomendation/RecomendationsList.vue';
 import ProposalAbout from '@/components/ProposalAbout.vue';
 import QuestList from '../components/UI/Quests/QuestsList.vue';
@@ -59,7 +58,6 @@ export default {
 
     components: {
         RecomendationsList,
-        FilteringList,
         ProposalAbout,
         QuestList,
         SwiperReviewsCompany
@@ -70,8 +68,7 @@ export default {
 <template>
     <div class="home">
         <recomendations-list />
-        <filtering-list />
-        <quest-list :todoss="matchingElements"/>
+        <quest-list :todos="matchingElements"/>
         <proposal-about />
         <swiper-reviews-company />
     </div>
