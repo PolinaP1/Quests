@@ -3,7 +3,7 @@ import axios from 'axios';
 import DemonstrationQuest from '../components/QuestPage/DemonstrationQuest.vue';
 import SpecificationsQuest from '../components/QuestPage/SpecificationsQuest.vue';
 import LegendQuest from '../components/QuestPage/LegendQuest.vue';
-import SheduleQuest from '../components/QuestPage/ScheduleQuest.vue';
+import SheduleQuestSelect from '../components/QuestPage/ScheduleQuestSelect.vue';
 import SwiperReviewQuest from '../components/QuestPage/SwiperReview/SwiperReviewQuest.vue';
 
 const baseUrl = "http://localhost:3000/todos";
@@ -31,7 +31,7 @@ export default {
         DemonstrationQuest,
         SpecificationsQuest,
         LegendQuest,
-        SheduleQuest,
+        SheduleQuestSelect,
         SwiperReviewQuest
     },
 
@@ -50,7 +50,7 @@ export default {
         <demonstration-quest v-for="todo in todos" :key="todo.id" :todo="todo" />
         <specifications-quest v-for="todo in todos" :key="todo.id" :todo="todo"/>
         <legend-quest v-for="todo in todos" :key="todo.id" :todo="todo" />
-        <shedule-quest v-for="todo in todos" :key="todo.id" :todo="todo" /> 
+        <shedule-quest-select v-for="todo in todos" :key="todo.id" :todo="todo" /> 
         <swiper-review-quest v-for="todo in todos" :key="todo.id" :todo="todo"/>
     </div>
 </template>

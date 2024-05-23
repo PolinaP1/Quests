@@ -1,23 +1,96 @@
-.shedule{
+.shedule {
     width: 100dvw;
     @include flex-c ($ai: flex-start);
 
-    &__item{
+    &__item {
         width: 80vw;
         font-size: 30px;
         font-weight: 700;
 
-        &__date{
+        &__date {
             display: flex;
             gap: 25px;
             margin-top: 15px;
 
-            &__button{
+            &__active {
+                background: $blue;
+            }
+
+            &__button {
                 border: 2px solid $black-orange;
                 box-shadow: 1px 2px 6px 3px rgba(250, 34, 8, 0.15);
 
-                &:hover{
+                &:hover {
                     border: 2px solid $dark-blue;
+                }
+            }
+
+            &__period {
+
+                &__option {
+                    font-size: 18px;
+                    font-weight: normal;
+                    background: $dark-grey;
+                    padding: 20px 25px;
+                    border-radius: 20px;
+                    margin-top: 5px;
+                    position: absolute;
+                    width: 100%;
+                    max-width: 420px;
+
+                    &__reservation {
+                        width: 100%;
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 20px;
+
+                        &__hover {
+                            width: 100px;
+                            padding: 10px;
+                            display: flex;
+                            justify-content: center;
+
+                            &:hover {
+                                width: 100px;
+                                background: $blue;
+                                border-radius: 10px;
+                                display: flex;
+                                justify-content: center;
+                                cursor: pointer;
+                            }
+                        }
+
+                    }
+                }
+            }
+
+            &__clear {
+                background: none;
+                border: none;
+            }
+        }
+
+        &__time {
+            width: 70vw;
+            margin: 25px 0px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+
+            &__button {
+                border: 2px solid $grey;
+                color: $grey;
+
+                &:hover {
+                    background: none;
+                    border: 2px solid $grey;
+                    cursor: not-allowed;
+                }
+
+                &:hover:disabled {
+                    border: 2px solid $grey;
+                    color: $grey;
+                    cursor: not-allowed;
                 }
             }
         }

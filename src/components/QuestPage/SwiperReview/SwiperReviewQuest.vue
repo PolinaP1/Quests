@@ -35,12 +35,6 @@ export default {
         }
     },
 
-    methods: {
-        getCompare(){
-            this.todo.id === this.reviews.id_quest
-        }
-    },
-
     components: {
         Swiper,
         SwiperSlide,

@@ -23,7 +23,7 @@ export default {
                 <h4 class="recomendation__postscript">------- Выбор Illuminous</h4>
                 <h2 class="recomendation__title">{{ todo.name }}</h2>
                 <h3 class="recomendation__descripion">{{ todo.description }}</h3>
-                <my-button>Подробнее<img src="@/img/Detailed.svg" /></my-button>
+                <my-button @click="$router.push(`/Quest/${todo.id}`)">Подробнее<img src="@/img/Detailed.svg" /></my-button>
             </div>
         </div>
     </div>

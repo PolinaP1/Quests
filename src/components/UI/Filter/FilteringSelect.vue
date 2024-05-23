@@ -37,12 +37,7 @@ export default {
     methods: {
 
         openOptions() {
-            if (this.visibleOptions == false) {
-                this.visibleOptions = true;
-            }
-            else {
-                this.visibleOptions = false;
-            }
+            this.visibleOptions = !this.visibleOptions;
 
         },
 
