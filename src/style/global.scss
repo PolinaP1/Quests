@@ -30,7 +30,7 @@
 
 @import './ui/quests.scss';
 
-@import './reviews-company.scss';
+@import './reviews.scss';
 
 @import './questpage/demonstration.scss';
 @import './questpage/specifications.scss';
@@ -45,6 +45,7 @@
   color: white;
   font-weight: normal;
   overflow-x: hidden;
+  overflow-y: hidden;
   position: absolute;
 
   &::after {

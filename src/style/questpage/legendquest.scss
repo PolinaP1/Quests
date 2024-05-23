@@ -1,14 +1,11 @@
 .legend{
-    @include flex-c ($ai: center);
-    width: 100dvw;
-    height: 530px;
+    @include w-dvw ($h: 400px);
     font-size: 24px;
     margin-bottom: 100px;
 
     &__item{
         width: 80vw;
         @include flex-c ($ai: flex-start);
-        
         gap: 70px;
 
         &__history{

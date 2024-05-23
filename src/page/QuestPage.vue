@@ -4,6 +4,7 @@ import DemonstrationQuest from '../components/QuestPage/DemonstrationQuest.vue';
 import SpecificationsQuest from '../components/QuestPage/SpecificationsQuest.vue';
 import LegendQuest from '../components/QuestPage/LegendQuest.vue';
 import SheduleQuest from '../components/QuestPage/ScheduleQuest.vue';
+import SwiperReviewQuest from '../components/QuestPage/SwiperReview/SwiperReviewQuest.vue';
 
 const baseUrl = "http://localhost:3000/todos";
 
@@ -30,7 +31,8 @@ export default {
         DemonstrationQuest,
         SpecificationsQuest,
         LegendQuest,
-        SheduleQuest
+        SheduleQuest,
+        SwiperReviewQuest
     },
 
     methods: {
@@ -49,6 +51,7 @@ export default {
         <specifications-quest v-for="todo in todos" :key="todo.id" :todo="todo"/>
         <legend-quest v-for="todo in todos" :key="todo.id" :todo="todo" />
         <shedule-quest v-for="todo in todos" :key="todo.id" :todo="todo" /> 
+        <swiper-review-quest v-for="todo in todos" :key="todo.id" :todo="todo"/>
     </div>
 </template>
 

@@ -3,9 +3,11 @@
     @include backg-img ($bp: center);
     padding: 230px 233px 185px 233px;
     display: block;  
+    @include w-dvw ($h: 540px);
 }
 
 .aboutus__beginning{
+    width: 70vw;
     @include flex-c ($ai:center);
     gap: 70px;
 }
@@ -20,7 +22,6 @@
 
     &__descripion {
         font-size: 18px;
-        width: 525px;
         padding-bottom: 30px;
         line-height: 35px;
     }

@@ -12,25 +12,27 @@ export default {
         }
     },
 
-components:{
-    SotialnetworkUi
-}
+    components: {
+        SotialnetworkUi
+    }
 }
 </script>
 
 <template>
-    <div class="container__about">
-        <div class="about">
-            <h2 class="about__title">Контакты</h2>
-            <ul class="about__descriptions">
-                <li v-for="item in items" :key="item.description">{{ item.description }}</li>
-            </ul>
-           <sotialnetwork-ui class="sotial__network__size"/>
+    <div class="about">
+        <div class="about__item">
+            <div class="container__about">
+                <div class="about__item">
+                    <h2 class="about__item__title">Контакты</h2>
+                    <ul class="about__item__descriptions">
+                        <li v-for="item in items" :key="item.description">{{ item.description }}</li>
+                    </ul>
+                    <sotialnetwork-ui class="sotial__network__size" />
+                </div>
+                <img src="@/img/Contacts.svg" class="contacts__img" />
+            </div>
         </div>
-        <img src="@/img/Contacts.svg" class="contacts__img"/>
     </div>
 </template>
 
-<style>
-
-</style>
+<style></style>

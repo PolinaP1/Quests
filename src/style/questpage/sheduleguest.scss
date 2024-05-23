@@ -1,9 +1,11 @@
 .shedule{
-    @include w-dvw ($h:280px);
+    width: 100dvw;
+    @include flex-c ($ai: flex-start);
 
     &__item{
         width: 80vw;
         font-size: 30px;
+        font-weight: 700;
 
         &__date{
             display: flex;
