@@ -50,6 +50,14 @@ export default {
                 time: ''
             }
 
+            if(text == "Сегодня"){
+                this.initialValue.date = '24.05.2024';
+            }
+
+            if(text == "Завтра"){
+                this.initialValue.date = '25.05.2024';
+            }
+
             if (text == "Выбрать период") {
                 this.visibleDate = true;
             }
@@ -121,7 +129,7 @@ export default {
         </div>
     </div>
     <div v-show="visibilityModal" >
-        <modal-window @hideModel="hideModel"  v-for="reservation in filteredReviews" :key="reservation" :reservation="reservation" :initialValue="initialValue"  :todo="todo"/>
+        <modal-window @hideModel="hideModel"  v-for="reservation in reservations" :key="reservation" :reservation="reservation" :initialValue="initialValue"  :todo="todo"/>
     </div>
 </template>
 

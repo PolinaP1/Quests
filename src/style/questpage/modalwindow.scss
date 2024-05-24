@@ -1,0 +1,159 @@
+.modal {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.03);
+    position: fixed;
+    z-index: 5;
+    @include flex-c ($ai: center);
+
+    &__content {
+        border: 3px solid #000;
+        width: 35vw;
+        margin: auto;
+        background: #252525;
+        border-radius: 25px;
+
+        &__quest {
+            width: 100%;
+            background: linear-gradient(135deg, #b88dff 0%, #ffa572 100%);
+            border-radius: 25px 25px 0 0;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            color: #000;
+            margin-top: 0;
+
+            &__img {
+                height: 4vw;
+                border-radius: 25px 0 0 0;
+            }
+
+            &__info {
+                font-size: 14px;
+
+                &__name {
+                    font-size: 20px;
+                    font-weight: 700;
+                    padding-bottom: 5px;
+                }
+
+                &__datetime {
+                    font-weight: 600;
+                    padding-top: 5px;
+                    display: flex;
+                }
+            }
+        }
+
+        &__title {
+            background: $gradient;
+            @include back-col ($bc: text);
+            font-size: 28px;
+            @include flex-c ($ai: center);
+            margin-top: 15px;
+        }
+
+        &__inputs {
+            font-size: 20px;
+            padding: 20px 70px;
+
+            &__name {
+                padding-bottom: 15px;
+            }
+
+            &__input {
+                width: 100%;
+                height: 50px;
+                border: none;
+                background: none;
+                border-bottom: 4px solid white;
+                padding: 5px 10px;
+                outline: none;
+                font-size: 18px;
+                color: white;
+
+                &:focus {
+                    border-bottom: 4px solid #1890ff;
+                }
+            }
+        }
+
+        &__players {
+            @include flex-b ($ai: center);
+            width: 80%;
+            margin-left: 60px;
+            font-size: 20px;
+
+            &__counting{
+                @include flex-b ($ai: center);
+                gap: 20px;
+            }
+
+            &__button{
+                background: none;
+                border: none;
+            }
+        }
+
+        &__sum{
+            @include flex-b ($ai: center);
+            margin: 20px 20px;
+            font-size: 22px;
+            color: #000;
+            background: linear-gradient(45deg, #aaa8ff 0%, #d0cfff 99.99%, #737373 100%, #cccbff 100.01%);
+            border-radius: 25px;
+            padding: 10px 25px;
+            font-weight: 700;
+
+            &__price{
+                @include flex-b ($ai: center);
+                gap: 10px;
+            }
+        }
+
+        &__buttons{
+            display: flex;
+            justify-content: right;
+            margin-right: 40px;
+            margin-bottom: 10px;
+            gap: 15px;
+            
+
+            &__cancel{
+                font-size: 20px;
+                background: $light-blue;
+                color: white;
+                border-radius: 20px;
+                border: 2px solid $blue;
+                padding: 15px 20px;
+            }
+
+            &__reserve{
+                font-size: 20px;
+                color: white;
+                background:
+                linear-gradient(135deg, #2e4596 0%, #a93c2d 100%) padding-box,
+                linear-gradient(90deg, #3e5bce 0%, #ff1900 100%) border-box;
+            border: 2px solid transparent;
+                border-radius: 20px;
+                padding: 15px 20px;
+            }
+        }
+    }
+}
+
+[placeholder]:focus::-webkit-input-placeholder {
+    transition: text-indent 0.6s 0.6s ease;
+    text-indent: -100%;
+    opacity: 1;
+}
+
+.modal__content__quest__players__button img{
+    transition: (0.4s);
+}
+
+.modal__content__quest__players__button img:hover{
+    transform: scale(1.1);
+}
