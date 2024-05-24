@@ -4,7 +4,7 @@
     margin-bottom: 100px;
 
     &__item{
-        width: 80vw;
+        width: 70vw;
         @include flex-c ($ai: flex-start);
         gap: 70px;
 
