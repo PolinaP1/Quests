@@ -14,6 +14,12 @@
     border-radius: 20px;
     border-bottom: 4px solid #fb8177;
     font-size: 18px;
+    transition: (0.5s);
+
+    &:hover{
+        background: #242424;
+        transform: scale(1.01);
+    }
 
     &__img{
         border-radius: 20px;

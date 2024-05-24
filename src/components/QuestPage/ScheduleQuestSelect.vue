@@ -50,11 +50,11 @@ export default {
                 time: ''
             }
 
-            if(text == "Сегодня"){
+            if (text == "Сегодня") {
                 this.initialValue.date = '24.05.2024';
             }
 
-            if(text == "Завтра"){
+            if (text == "Завтра") {
                 this.initialValue.date = '25.05.2024';
             }
 
@@ -79,13 +79,29 @@ export default {
         showModal() {
             this.visibilityModal = true;
         },
-        hideModel(){
+        hideModel() {
             this.visibilityModal = false;
+        },
+        async updateData(number_user, name_user) {
+            try {
+                const reservation = this.reservations[0];
+                const response = await axios.put(`${baseReservationUrl}/${this.$route.params.id}`,
+                    {
+                        ...reservation,
+                        name_user: name_user,
+                        number_user: number_user
+                        
+                    });
+                console.log(response.data);
+            }
+            catch (e) {
+                console.error(e);
+            }
         }
     },
-    computed:{
+    computed: {
         filteredReviews() {
-            return this.reservations.filter(reservation => reservation.id_quest === this.todo.id);
+            return this.reservations.filter(reservation => reservation.id === this.todo.id);
         }
     }
 }
@@ -123,13 +139,15 @@ export default {
             </div>
             <div class="shedule__item__time">
                 <shedule-button :class="[time.isActive == false && 'shedule__item__time__button']"
-                    v-for="time in todo.time_reservation" :key="time" :time="time" @click="changeTime(time.time)">{{ time.time }}
+                    v-for="time in todo.time_reservation" :key="time" :time="time" @click="changeTime(time.time)">{{
+                        time.time }}
                 </shedule-button>
             </div>
         </div>
     </div>
-    <div v-show="visibilityModal" >
-        <modal-window @hideModel="hideModel"  v-for="reservation in reservations" :key="reservation" :reservation="reservation" :initialValue="initialValue"  :todo="todo"/>
+    <div v-show="visibilityModal">
+        <modal-window @hideModel="hideModel" v-for="reservation in reservations" :key="reservation"
+            :reservation="reservation" :initialValue="initialValue" :todo="todo" @updateData="updateData" />
     </div>
 </template>
 

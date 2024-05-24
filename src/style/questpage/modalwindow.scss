@@ -86,18 +86,18 @@
             margin-left: 60px;
             font-size: 20px;
 
-            &__counting{
+            &__counting {
                 @include flex-b ($ai: center);
                 gap: 20px;
             }
 
-            &__button{
+            &__button {
                 background: none;
                 border: none;
             }
         }
 
-        &__sum{
+        &__sum {
             @include flex-b ($ai: center);
             margin: 20px 20px;
             font-size: 22px;
@@ -107,38 +107,50 @@
             padding: 10px 25px;
             font-weight: 700;
 
-            &__price{
+            &__price {
                 @include flex-b ($ai: center);
                 gap: 10px;
             }
         }
 
-        &__buttons{
+        &__buttons {
             display: flex;
             justify-content: right;
             margin-right: 40px;
             margin-bottom: 10px;
             gap: 15px;
-            
 
-            &__cancel{
+
+            &__cancel {
                 font-size: 20px;
                 background: $light-blue;
                 color: white;
                 border-radius: 20px;
                 border: 2px solid $blue;
                 padding: 15px 20px;
+
+                &:hover {
+                    background: $blue;
+                    border: 2px solid $dark-blue;
+                }
             }
 
-            &__reserve{
+            &__reserve {
                 font-size: 20px;
                 color: white;
                 background:
-                linear-gradient(135deg, #2e4596 0%, #a93c2d 100%) padding-box,
-                linear-gradient(90deg, #3e5bce 0%, #ff1900 100%) border-box;
-            border: 2px solid transparent;
+                    linear-gradient(135deg, #2e4596 0%, #a93c2d 100%) padding-box,
+                    linear-gradient(90deg, #3e5bce 0%, #ff1900 100%) border-box;
+                border: 2px solid transparent;
                 border-radius: 20px;
                 padding: 15px 20px;
+
+                &:hover {
+                    background:
+                        linear-gradient(#a93c2d 0 0) padding-box,
+                        linear-gradient(#ff1900 0 0) border-box;
+                    border: 2px solid transparent;
+                }
             }
         }
     }
@@ -150,10 +162,10 @@
     opacity: 1;
 }
 
-.modal__content__quest__players__button img{
+.modal__content__quest__players__button img {
     transition: (0.4s);
 }
 
-.modal__content__quest__players__button img:hover{
+.modal__content__quest__players__button img:hover {
     transform: scale(1.1);
 }
