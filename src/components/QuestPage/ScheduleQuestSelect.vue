@@ -71,7 +71,13 @@ export default {
         },
         changeTime(time) {
             this.initialValue.time = time;
-            this.showModal();
+            if (this.initialValue.date != '') {
+                this.showModal();
+            }
+            else {
+                alert("Сначала выберите дату резервирования квеста")
+            }
+
         },
         cancelDate() {
             this.visibleDate = false;
@@ -90,12 +96,42 @@ export default {
                         ...reservation,
                         name_user: name_user,
                         number_user: number_user
-                        
+
                     });
                 console.log(response.data);
             }
             catch (e) {
                 console.error(e);
+            }
+        },
+        // async emitSelectedTime(selectedTime, noActive) {
+        //     try {
+        //         const todo = this.todos[0];
+        //         const time = todo.time_reservation[0];
+        //         const responseTodo = await axios.put(`http://localhost:3000/todos/${this.$route.params.id}`,
+        //             {
+        //                 ...todo,
+        //                 ...time,
+        //                 time: selectedTime,
+        //                 isActive: noActive
+
+        //             });
+        //         console.log(responseTodo.data);
+        //     }
+        //     catch (e) {
+        //         console.error(e);
+        //     }
+        // }
+
+        emitSelectedTime(selectedTime, noActive) {
+            console.log("Selected Time:", selectedTime);
+            console.log("No Active:", noActive);
+            const selectedTimeIndex = this.todo.time_reservation.findIndex(time => time.time === selectedTime);
+            if (selectedTimeIndex !== -1 && Object.prototype.hasOwnProperty.call(this.todo.time_reservation[selectedTimeIndex], 'isActive')) {
+                const updatedTodo = { ...this.todo };
+                updatedTodo.time_reservation[selectedTimeIndex].isActive = noActive;
+            } else {
+                console.error("Selected time not found or does not have 'isActive' property.");
             }
         }
     },
@@ -138,7 +174,8 @@ export default {
                         src="@/img/CancelFiltering.svg" /></button>
             </div>
             <div class="shedule__item__time">
-                <shedule-button :class="[time.isActive == false && 'shedule__item__time__button']"
+                <shedule-button
+                    :class="{ 'shedule__item__time__button': !time.isActive, 'shedule__button': time.isActive }"
                     v-for="time in todo.time_reservation" :key="time" :time="time" @click="changeTime(time.time)">{{
                         time.time }}
                 </shedule-button>
@@ -147,7 +184,8 @@ export default {
     </div>
     <div v-show="visibilityModal">
         <modal-window @hideModel="hideModel" v-for="reservation in reservations" :key="reservation"
-            :reservation="reservation" :initialValue="initialValue" :todo="todo" @updateData="updateData" />
+            :reservation="reservation" :initialValue="initialValue" :todo="todo" @updateData="updateData"
+            @emitSelectedTime="emitSelectedTime" />
     </div>
 </template>
 

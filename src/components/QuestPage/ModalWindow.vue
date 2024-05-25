@@ -23,7 +23,7 @@ export default {
                 phoneNumber: '',
                 firstName: ''
             },
-            // players: this.todo.number_of_players.number_of_players,
+            noActive: false
         }
     },
 
@@ -71,18 +71,18 @@ export default {
             if (this.updatedData.phoneNumber == '' || this.updatedData.firstName == '') {
                 alert("Для забронирования квеста Вам необходимо заполнить поля: 'Имя' и 'Номер телефона'")
             }
-            else{
+            else {
                 this.$emit('updateData', this.updatedData.phoneNumber, this.updatedData.firstName),
-                this.$emit('hideModel'),
-                alert("Вы успешно забронировались! Дождитесь звонка, вам перезвонят")
+                    this.$emit('hideModel'),
+                    this.$emit('emitSelectedTime', this.initialValue.time, this.noActive),
+                    alert("Вы успешно забронировались! Дождитесь звонка, вам перезвонят"),
+                    this.updatedData.firstName = '',
+                    this.updatedData.phoneNumber = ''
             }
-            
         },
-        
+
     }
 }
-
-
 </script>
 
 <template>
