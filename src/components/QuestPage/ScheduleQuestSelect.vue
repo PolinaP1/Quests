@@ -58,7 +58,7 @@ export default {
                 this.initialValue.date = '25.05.2024';
             }
 
-            if (text == "Выбрать период") {
+            if (text == "Выбрать дату") {
                 this.visibleDate = true;
             }
             else {
@@ -156,9 +156,9 @@ export default {
                     @click="activeButton('Завтра')">Завтра</shedule-button>
                 <div class="shedule__item__date__period">
                     <shedule-button
-                        :class="[this.active == 'Выбрать период' ? 'shedule__item__date__active' : 'shedule__item__date__button']"
-                        @click="activeButton('Выбрать период')"> {{ (this.initialValue.type == 'Выбрать период' &&
-                        this.initialValue.date != '') ? this.initialValue.date : 'Выбрать период' }}</shedule-button>
+                        :class="[this.active == 'Выбрать дату' ? 'shedule__item__date__active' : 'shedule__item__date__button']"
+                        @click="activeButton('Выбрать дату')"> {{ (this.initialValue.type == 'Выбрать дату' &&
+                        this.initialValue.date != '') ? this.initialValue.date : 'Выбрать дату' }}</shedule-button>
                     <div class="shedule__item__date__period__option" v-show="visibleDate">
                         <div class="shedule__item__date__period__option__reservation"
                             v-for="reservation in filteredReviews" :key="reservation" :reservation="reservation">

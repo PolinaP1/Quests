@@ -2,8 +2,10 @@
 import MyButton from './UI/MyButton.vue';
 
 export default {
+    // вызывается метод, в котором будет прописана функция для перехода на страницу "О нас"
     methods: {
         goToAboutUs() {
+            // прописывается путь через $router.push
             this.$router.push('/About')
         }
     },
@@ -32,6 +34,7 @@ export default {
                 </ul>
             </nav>
             <div class="proposal__watch">
+                <!-- Команда @click вызывает функцию goToAboutUs -->
                 <my-button @click="goToAboutUs">Посмотреть про нас</my-button>
             </div>
         </div>

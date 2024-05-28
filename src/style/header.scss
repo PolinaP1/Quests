@@ -1,14 +1,14 @@
 .header-ui {
     position: relative;
-    @include flex-c ($ai:center);
+    @include flex-b ($ai:center);
+    width: 100dvw;
 }
 
 .header {
-    margin-top: 85px;
+    width: 100dvw;
     height: 45px;
-    padding-right: 50px;
-    padding-left: 50px;
-    gap: 396px;
+    margin-top: 85px;
+    padding: 0 70px;
     @include flex-b ($ai: center);
     position: absolute;
     z-index: 4;
@@ -33,7 +33,7 @@
 .header .navbar {
     display: flex;
     gap: 40px;
-    width: 250px;
+    width: 25%;
 }
 
 .header .navbar .nav__items__activ{

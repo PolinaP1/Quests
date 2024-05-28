@@ -32,5 +32,5 @@
 @mixin w-dvw ($h: 540px) {
     @include flex-c ($ai: center);
     width: 100dvw;
-    height: 530px;
+    height: $h;
 }

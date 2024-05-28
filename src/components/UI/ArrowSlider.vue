@@ -2,7 +2,7 @@
 export default {
     data() {
         return {
-            name: 'arrow-slider-button'
+            name: 'arrow-slider'
         }
     },
 }

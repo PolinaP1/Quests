@@ -1,16 +1,15 @@
 .footer {
-    @include flex-c ($ai: center);
-    background: $dark-grey;
-    height: 287px;
-    padding: 50px 150px 50px 250px;
-    margin-top: 50px;
+  @include flex-b ($ai: center);
+  width: 100dvw;
+  background: $dark-grey;
+  height: 287px;
+  margin-top: 50px;
 
-    &__container {
-        @include flex-b ($ai: center);
-        gap: 100px;
-        width: 50vw;
-        width: 1045px;
-    }
+  &__container {
+    @include flex-b ($ai: start);
+    padding: 0 250px;
+    width: 100vw;
+  }
 
   &::after {
     background: rgba(248, 145, 113, 0.19);
@@ -37,17 +36,18 @@
 }
 
 .footer .nav__items {
-    color: white;
-    line-height: 30px;
+  color: white;
+  display: flex;
+  margin-top: 10px;
 }
 
 .footer__link {
-    width: 90px;
-    font-size: 16px;
+  font-size: 16px;
 
-    &__title {
-        padding-bottom: 15px;
-        font-weight: 700;
-        font-size: 18px;
-    }
+  &__title {
+    width: 100px;
+    padding-bottom: 25px;
+    font-weight: 700;
+    font-size: 18px;
+  }
 }

@@ -62,14 +62,14 @@ export default {
         },
         updateValue(event) {
             const value = event.target.value
-            if (String(value).length <= 10) {
+            if (String(value).length <= 16) {
                 this.updatedData.phoneNumber = value
             }
             this.$forceUpdate()
         },
         checkInput() {
             if (this.updatedData.phoneNumber == '' || this.updatedData.firstName == '') {
-                alert("Для забронирования квеста Вам необходимо заполнить поля: 'Имя' и 'Номер телефона'")
+                alert("Для резервирования квеста Вам необходимо заполнить поля: 'Имя' и 'Номер телефона'")
             }
             else {
                 this.$emit('updateData', this.updatedData.phoneNumber, this.updatedData.firstName),
@@ -112,7 +112,7 @@ export default {
                         <input @input="formatPhoneNumber" v-model="updatedData.phoneNumber"
                             class="modal__content__inputs__input" type="text" placeholder="+7(987)856-54-85"
                             @keydown.backspace="allowBackspace"
-                            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(16, this.maxLength);"
                             maxlength="16" />
                     </div>
                 </div>

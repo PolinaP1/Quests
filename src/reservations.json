@@ -2,8 +2,8 @@
   "reservations": [
     {
       "id": "1",
-      "name_user": "ррпр",
-      "number_user": "+7(444)444-44-44",
+      "name_user": "в",
+      "number_user": "6",
       "price_reservation": {
         "id_price": "1",
         "price": "1950"
@@ -762,11 +762,11 @@
     },
     {
       "id": "13",
-      "name_user": "",
-      "number_user": "",
+      "name_user": "Полина",
+      "number_user": "+7(910)865-45-78",
       "price_reservation": {
-        "id_price": "2",
-        "price": "2150"
+        "id_price": "1",
+        "price": "1950"
       },
       "date_reservation": [
         {
@@ -821,7 +821,11 @@
           "id_date": "14",
           "date": "06.06.2024"
         }
-      ]
+      ],
+      "updateData": {
+        "name_user": "ы",
+        "number_user": "+7(999)999-99-99"
+      }
     },
     {
       "id": "14",

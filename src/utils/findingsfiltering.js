@@ -1,8 +1,9 @@
 const findingsfiltering = [
     {
-        id: "1",
-        img: "TipFilter",
-        designation: "Тип",
+        id: "1", 
+        img: "TipFilter", //название изображения для фильтра "Тип"
+        designation: "Тип", //название фильтра
+        //данные в выпадающем  списке
         insides: [
             {inside: "С актерами"},
             {inside: "Без актеров"}
@@ -10,8 +11,9 @@ const findingsfiltering = [
     },
     {
         id: "2",
-        img: "ViewFilter",
-        designation: "Вид",
+        img: "ViewFilter", //название изображения для фильтра "Вид"
+        designation: "Вид",//название фильтра
+        //данные в выпадающем  списке
         insides: [
             {inside: "Страшные"},
             {inside: "Не страшные"}
@@ -19,8 +21,9 @@ const findingsfiltering = [
     },
     {
         id: "3",
-        img: "PlayersFilter",
-        designation: "Игроки",
+        img: "PlayersFilter",//название изображения для фильтра "Игроки"
+        designation: "Игроки",//название фильтра
+        //данные в выпадающем  списке
         insides: [
             {inside: "2"},
             {inside: "3"},
@@ -30,8 +33,9 @@ const findingsfiltering = [
     },
     {
         id: "4",
-        img: "AgeFilter",
-        designation: "Возраст",
+        img: "AgeFilter",//название изображения для фильтра "Возраст"
+        designation: "Возраст",//название фильтра
+        //данные в выпадающем  списке
         insides: [
             {inside: "14+"},
             {inside: "16+"},
@@ -39,5 +43,5 @@ const findingsfiltering = [
         ]
     }
 ]
-
+//экспортирование утилиты
 export default findingsfiltering

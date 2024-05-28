@@ -10,7 +10,7 @@ export default {
         <h1 class="assistance__heading">Помощь</h1>
         <h2 class="assistance__description">Проблемы с сайтом? Тогда позвоните в службу поддержки по телефону:</h2>
         <div class="assistance__number">
-        <a to="/" class="assistance__number__link">+7 (499) 910-77-15</a>
+        <a href="tel:+74999107715" class="assistance__number__link">+7 (499) 910-77-15</a>
     </div>
     </div>
 </template>

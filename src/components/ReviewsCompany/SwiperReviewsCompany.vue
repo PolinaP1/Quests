@@ -41,10 +41,13 @@ export default {
 <template>
     <h2 class="reviews__title">Отзывы о нашем Illuminous</h2>
     <h3 class="reviews__poscript">Реакции наших клиентов</h3>
-    <swiper class="reviews__company" :slides-per-view="2" :navigation="{ nextEl: '.review__nextArrow', prevEl: '.review__prevArrow' }">
+    <!-- указывается метод "navigation", который содержит в себе кнопку перелистывания слайдера вперед - "nextEl" и назад - prevEl -->
+    <swiper class="reviews__company" :slides-per-view="2"
+        :navigation="{ nextEl: '.review__nextArrow', prevEl: '.review__prevArrow' }">
+        <!-- кнопки для перелистывания, которые будут в данном swiper -->
         <div class="reviews__company__arrow">
-            <arrow-slider class="review__prevArrow"/>
-            <arrow-slider class="review__nextArrow"/>
+            <arrow-slider class="review__prevArrow" />
+            <arrow-slider class="review__nextArrow" />
         </div>
         <swiper-slide v-for="review in reviews" :key="review.id" :review="review" class="review__company__slide">
             <slide-review-company :review="review" />

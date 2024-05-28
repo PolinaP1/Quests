@@ -22,7 +22,7 @@ export default {
                 <navbar-ui />
             </div>
             <div class="number">
-                <a class="number__link" href='/'>+7 (499) 460-54-20</a>
+                <a class="number__link" href="tel:+74994605420">+7 (499) 460-54-20</a>
             </div>
         </header>
     </div>
