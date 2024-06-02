@@ -66,9 +66,11 @@ export default {
             }
             console.log(this.initialValue)
         },
+        
         changeDate(date) {
             this.initialValue.date = date;
         },
+
         changeTime(time) {
             this.initialValue.time = time;
             if (this.initialValue.date != '') {
@@ -79,15 +81,19 @@ export default {
             }
 
         },
+
         cancelDate() {
             this.visibleDate = false;
         },
+
         showModal() {
             this.visibilityModal = true;
         },
+
         hideModel() {
             this.visibilityModal = false;
         },
+
         async updateData(number_user, name_user) {
             try {
                 const reservation = this.reservations[0];
@@ -104,24 +110,6 @@ export default {
                 console.error(e);
             }
         },
-        // async emitSelectedTime(selectedTime, noActive) {
-        //     try {
-        //         const todo = this.todos[0];
-        //         const time = todo.time_reservation[0];
-        //         const responseTodo = await axios.put(`http://localhost:3000/todos/${this.$route.params.id}`,
-        //             {
-        //                 ...todo,
-        //                 ...time,
-        //                 time: selectedTime,
-        //                 isActive: noActive
-
-        //             });
-        //         console.log(responseTodo.data);
-        //     }
-        //     catch (e) {
-        //         console.error(e);
-        //     }
-        // }
 
         emitSelectedTime(selectedTime, noActive) {
             console.log("Selected Time:", selectedTime);
@@ -135,6 +123,7 @@ export default {
             }
         }
     },
+
     computed: {
         filteredReviews() {
             return this.reservations.filter(reservation => reservation.id === this.todo.id);

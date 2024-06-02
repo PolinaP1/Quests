@@ -40,7 +40,35 @@ export default {
             this.todos = this.todos.filter(item => {
                 return item.id == parseInt(this.parameter);
             });
+        },
+        async updatetimereservation(time, isActive) {
+        const todoToUpdate = this.todos.find(todo => todo.id === this.parameter);
+        if (!todoToUpdate) {
+            console.error('Todo not found');
+            return;
         }
+
+        const updatedTimeReservation = todoToUpdate.time_reservation.map(timeReservation => {
+            if (timeReservation.time === time) {
+                return { ...timeReservation, isActive };
+            }
+            return timeReservation;
+        });
+
+        try {
+            const response = await axios.put(`${baseUrl}/${this.parameter}`, {
+                ...todoToUpdate,
+                time_reservation: updatedTimeReservation
+            });
+            console.log('Updated todo:', response.data);
+            // Обновляем локальный стейт после успешного запроса
+            this.todos = this.todos.map(todo =>
+                todo.id === this.parameter ? { ...todo, time_reservation: updatedTimeReservation } : todo
+            );
+        } catch (error) {
+            console.error('Error updating todo:', error);
+        }
+    }
     }
 }
 </script>
@@ -50,7 +78,7 @@ export default {
         <demonstration-quest v-for="todo in todos" :key="todo.id" :todo="todo" />
         <specifications-quest v-for="todo in todos" :key="todo.id" :todo="todo"/>
         <legend-quest v-for="todo in todos" :key="todo.id" :todo="todo" />
-        <shedule-quest-select v-for="todo in todos" :key="todo.id" :todo="todo" /> 
+        <shedule-quest-select v-for="todo in todos" :key="todo.id" :todo="todo" @updatetimereservation="updatetimereservation"/> 
         <swiper-review-quest v-for="todo in todos" :key="todo.id" :todo="todo"/>
     </div>
 </template>
