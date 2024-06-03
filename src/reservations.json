@@ -2,8 +2,8 @@
   "reservations": [
     {
       "id": "1",
-      "name_user": "апрпрол",
-      "number_user": "+7(786)543-21-11",
+      "name_user": "рол",
+      "number_user": "+7(963)333-33-33",
       "price_reservation": {
         "id_price": "1",
         "price": "1950"
@@ -762,8 +762,8 @@
     },
     {
       "id": "13",
-      "name_user": "Анастасия",
-      "number_user": "+7(915)975-64-58",
+      "name_user": "Петр",
+      "number_user": "+7(915)978-64-59",
       "price_reservation": {
         "id_price": "1",
         "price": "1950"

@@ -17,6 +17,7 @@ export default {
         return {
             visibilityModal: false,
             reservations: [],
+            todos: this.todo,
             active: "",
             visibleDate: false,
             initialValue: {
@@ -66,7 +67,7 @@ export default {
             }
             console.log(this.initialValue)
         },
-        
+
         changeDate(date) {
             this.initialValue.date = date;
         },
@@ -111,17 +112,25 @@ export default {
             }
         },
 
-        emitSelectedTime(selectedTime, noActive) {
-            console.log("Selected Time:", selectedTime);
-            console.log("No Active:", noActive);
-            const selectedTimeIndex = this.todo.time_reservation.findIndex(time => time.time === selectedTime);
-            if (selectedTimeIndex !== -1 && Object.prototype.hasOwnProperty.call(this.todo.time_reservation[selectedTimeIndex], 'isActive')) {
-                const updatedTodo = { ...this.todo };
-                updatedTodo.time_reservation[selectedTimeIndex].isActive = noActive;
-            } else {
-                console.error("Selected time not found or does not have 'isActive' property.");
+
+        async emitSelectedTime(selectedTime, noActive) {
+            try {
+                const tod = this.todos;
+                const selectedTimeIndex = this.todo.time_reservation.findIndex(time => time.time === selectedTime);
+                const responseTodo = await axios.put(`http://localhost:3000/todos/${this.$route.params.id}`, {
+                    ...tod,
+                    time_reservation: tod.time_reservation.map(timeSlot =>
+                        timeSlot.id_time == selectedTimeIndex + 1 ? { ...timeSlot, isActive: noActive } : timeSlot
+                    )
+                    
+                });
+                console.log(responseTodo.data);
+                this.$emit('created');
+                
+            } catch (e) {
+                console.error(e);
             }
-        }
+        },
     },
 
     computed: {

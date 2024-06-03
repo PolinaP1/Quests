@@ -16,17 +16,6 @@ export default {
         }
     },
 
-    async created() {
-        try {
-            const res = await axios.get(baseUrl);
-            this.todos = res.data;
-            this.keepingData = this.todos;
-            this.comparisonParametres();
-        }
-        catch (e) {
-            console.error(e);
-        }
-    },
     components: {
         DemonstrationQuest,
         SpecificationsQuest,
@@ -35,40 +24,55 @@ export default {
         SwiperReviewQuest
     },
 
+    mounted() {
+        this.created()
+    },
+
     methods: {
+        async created() {
+            try {
+                const res = await axios.get(baseUrl);
+                this.todos = res.data;
+                this.keepingData = this.todos;
+                this.comparisonParametres();
+            }
+            catch (e) {
+                console.error(e);
+            }
+        },
         comparisonParametres() {
             this.todos = this.todos.filter(item => {
                 return item.id == parseInt(this.parameter);
             });
         },
         async updatetimereservation(time, isActive) {
-        const todoToUpdate = this.todos.find(todo => todo.id === this.parameter);
-        if (!todoToUpdate) {
-            console.error('Todo not found');
-            return;
-        }
-
-        const updatedTimeReservation = todoToUpdate.time_reservation.map(timeReservation => {
-            if (timeReservation.time === time) {
-                return { ...timeReservation, isActive };
+            const todoToUpdate = this.todos.find(todo => todo.id === this.parameter);
+            if (!todoToUpdate) {
+                console.error('Todo not found');
+                return;
             }
-            return timeReservation;
-        });
 
-        try {
-            const response = await axios.put(`${baseUrl}/${this.parameter}`, {
-                ...todoToUpdate,
-                time_reservation: updatedTimeReservation
+            const updatedTimeReservation = todoToUpdate.time_reservation.map(timeReservation => {
+                if (timeReservation.time === time) {
+                    return { ...timeReservation, isActive };
+                }
+                return timeReservation;
             });
-            console.log('Updated todo:', response.data);
-            // Обновляем локальный стейт после успешного запроса
-            this.todos = this.todos.map(todo =>
-                todo.id === this.parameter ? { ...todo, time_reservation: updatedTimeReservation } : todo
-            );
-        } catch (error) {
-            console.error('Error updating todo:', error);
+
+            try {
+                const response = await axios.put(`${baseUrl}/${this.parameter}`, {
+                    ...todoToUpdate,
+                    time_reservation: updatedTimeReservation
+                });
+                console.log('Updated todo:', response.data);
+                // Обновляем локальный стейт после успешного запроса
+                this.todos = this.todos.map(todo =>
+                    todo.id === this.parameter ? { ...todo, time_reservation: updatedTimeReservation } : todo
+                );
+            } catch (error) {
+                console.error('Error updating todo:', error);
+            }
         }
-    }
     }
 }
 </script>
@@ -76,10 +80,10 @@ export default {
 <template>
     <div>
         <demonstration-quest v-for="todo in todos" :key="todo.id" :todo="todo" />
-        <specifications-quest v-for="todo in todos" :key="todo.id" :todo="todo"/>
+        <specifications-quest v-for="todo in todos" :key="todo.id" :todo="todo" />
         <legend-quest v-for="todo in todos" :key="todo.id" :todo="todo" />
-        <shedule-quest-select v-for="todo in todos" :key="todo.id" :todo="todo" @updatetimereservation="updatetimereservation"/> 
-        <swiper-review-quest v-for="todo in todos" :key="todo.id" :todo="todo"/>
+        <shedule-quest-select v-for="todo in todos" :key="todo.id" :todo="todo" @created="created" />
+        <swiper-review-quest v-for="todo in todos" :key="todo.id" :todo="todo" />
     </div>
 </template>
 
